@@ -34,7 +34,7 @@
 
 ## Lesson Files Created
 - `01-html-basics.html` ✅ - HTML structure, tags, forms, real-world examples
-- `02-css-basics.html` ⏳ - Styling, colors, layouts, responsive design
+- `02-css-basics.html` ✅ - Styling, colors, layouts, responsive design
 - `03-javascript-basics.html` ⏳ - Variables, functions, DOM manipulation
 - `04-combined-project.html` ⏳ - Interactive project using all three
 
@@ -102,11 +102,23 @@ By completion, learner should be able to:
 - **View source:** Right-click → View Page Source in browser
 - **Test responsiveness:** Use browser dev tools (F12)
 
+## Git Repository Information
+- **Repository:** https://github.com/srinidhi-bs/web-development-learning
+- **Purpose:** Access learning materials from desktop and mobile Claude Code
+- **Commands:**
+  - `git pull origin master` - Pull latest changes from GitHub
+  - `git add . && git commit -m "message"` - Stage and commit changes
+  - `git push origin master` - Push changes to GitHub
+- **Mobile Access:** Use Claude Code on phone to pull and access files
+
 ## Session History
 - **July 8, 2025:** Created learning project structure and HTML basics lesson
 - **Lesson 1:** HTML Basics - Structure, tags, forms, real-world examples with invoice/client forms
 - **Teaching method:** Interactive lesson with code examples, output previews, and hands-on challenges
 - **Learner response:** Requested comprehensive basics before Vue.js learning (excellent decision!)
+- **July 9, 2025:** Created CSS basics lesson and set up git repository
+- **Lesson 2:** CSS Basics - Styling, responsive design, professional examples for compliance tracker
+- **Git Setup:** Created GitHub repository for mobile access across devices
 
 ## Relationship to Compliance Tracker Project
 This learning project is a **prerequisite** for the main compliance tracker project:
