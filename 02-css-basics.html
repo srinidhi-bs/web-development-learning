@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics - Learning Web Development</title>
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        
+        .lesson-section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .code-example {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #2563eb;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        
+        .output-example {
+            background: #e8f5e8;
+            padding: 15px;
+            border-left: 4px solid #16a34a;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .explanation {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .try-it {
+            background: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #0dcaf0;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            border-left: 4px solid #dc3545;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        h1 { color: #2563eb; }
+        h2 { color: #1e40af; }
+        h3 { color: #1e3a8a; }
+        
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        /* Demo styles for examples */
+        .demo-box {
+            background: #e3f2fd;
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px solid #2196f3;
+            border-radius: 5px;
+        }
+        
+        .demo-red-text {
+            color: red;
+            font-weight: bold;
+        }
+        
+        .demo-blue-bg {
+            background-color: lightblue;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        
+        .demo-centered {
+            text-align: center;
+            background: #f0f0f0;
+            padding: 15px;
+        }
+        
+        .demo-invoice {
+            border: 2px solid #2563eb;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            background: #f8f9ff;
+        }
+        
+        .demo-invoice h3 {
+            color: #2563eb;
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        .demo-invoice .client-info {
+            background: #e8f4f8;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #0dcaf0;
+        }
+        
+        .demo-invoice .amount {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #16a34a;
+            text-align: right;
+        }
+        
+        .demo-form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .demo-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .demo-form input, .demo-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        .demo-form button {
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .demo-form button:hover {
+            background: #1d4ed8;
+        }
+        
+        /* Responsive examples */
+        .responsive-demo {
+            background: #f0f8ff;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #87ceeb;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .responsive-demo {
+                background: #ffe4e1;
+                border-color: #ffa07a;
+            }
+            
+            .responsive-demo::before {
+                content: "📱 Mobile View: ";
+                font-weight: bold;
+                color: #d2691e;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .responsive-demo::before {
+                content: "💻 Desktop View: ";
+                font-weight: bold;
+                color: #4682b4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 CSS Basics - Making Your Web Pages Beautiful</h1>
+    
+    <div class="lesson-section">
+        <h2>What is CSS?</h2>
+        <p>CSS stands for <strong>Cascading Style Sheets</strong>. Remember our building analogy from the HTML lesson? If HTML is the structure, CSS is the <span class="highlight">interior design</span> - it controls how everything looks!</p>
+        
+        <div class="explanation">
+            <h3>Building Analogy Review:</h3>
+            <ul>
+                <li><strong>HTML</strong> = The structure (walls, rooms, doors)</li>
+                <li><strong>CSS</strong> = The interior design (paint, furniture, lighting)</li>
+                <li><strong>JavaScript</strong> = The electrical system (switches, automation)</li>
+            </ul>
+        </div>
+        
+        <div class="demo-box">
+            <h3>See CSS in Action!</h3>
+            <p>This blue box with rounded corners and shadow? That's CSS styling this HTML content!</p>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>How CSS Works - The Three Ways</h2>
+        <p>There are three ways to add CSS to your HTML:</p>
+        
+        <h3>1. Inline CSS (Not Recommended)</h3>
+        <div class="code-example">
+&lt;p style="color: red; font-size: 18px;"&gt;This text is red and big&lt;/p&gt;
+        </div>
+        
+        <div class="output-example">
+            <p style="color: red; font-size: 18px;">This text is red and big</p>
+        </div>
+        
+        <h3>2. Internal CSS (What we're using today)</h3>
+        <div class="code-example">
+&lt;head&gt;
+    &lt;style&gt;
+        p {
+            color: blue;
+            font-size: 16px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+        </div>
+        
+        <h3>3. External CSS (Professional Way)</h3>
+        <div class="code-example">
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+        </div>
+        
+        <div class="explanation">
+            <h3>Which method to use?</h3>
+            <ul>
+                <li><strong>Inline CSS:</strong> Avoid this - makes HTML messy</li>
+                <li><strong>Internal CSS:</strong> Good for learning and small projects</li>
+                <li><strong>External CSS:</strong> Best for real projects - keeps code organized</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>CSS Syntax - The Recipe Format</h2>
+        <p>CSS follows a simple pattern like a recipe:</p>
+        
+        <div class="code-example">
+selector {
+    property: value;
+    property: value;
+}
+        </div>
+        
+        <div class="explanation">
+            <h3>Breaking it down:</h3>
+            <ul>
+                <li><strong>Selector:</strong> What you want to style (like "all paragraphs")</li>
+                <li><strong>Property:</strong> What aspect to change (like "color")</li>
+                <li><strong>Value:</strong> How to change it (like "red")</li>
+                <li><strong>Curly braces { }:</strong> Group all the styling rules</li>
+                <li><strong>Semicolon ;</strong> End each rule (like a period in a sentence)</li>
+            </ul>
+        </div>
+        
+        <div class="try-it">
+            <h3>🔍 Look at this page's CSS:</h3>
+            <p>Right-click and "View Page Source" to see how CSS is written in the &lt;style&gt; section!</p>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>Common CSS Properties for Text</h2>
+        
+        <table>
+            <tr>
+                <th>Property</th>
+                <th>What it does</th>
+                <th>Example Values</th>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>Text color</td>
+                <td>red, blue, #ff0000, #2563eb</td>
+            </tr>
+            <tr>
+                <td>font-size</td>
+                <td>Text size</td>
+                <td>16px, 18px, 1.2em, large</td>
+            </tr>
+            <tr>
+                <td>font-weight</td>
+                <td>Text thickness</td>
+                <td>normal, bold, 400, 700</td>
+            </tr>
+            <tr>
+                <td>text-align</td>
+                <td>Text alignment</td>
+                <td>left, center, right, justify</td>
+            </tr>
+            <tr>
+                <td>background-color</td>
+                <td>Background color</td>
+                <td>white, lightblue, #f0f0f0</td>
+            </tr>
+        </table>
+        
+        <div class="output-example">
+            <h3>See these properties in action:</h3>
+            <p class="demo-red-text">This text is red and bold</p>
+            <p class="demo-blue-bg">This text has a light blue background</p>
+            <p class="demo-centered">This text is centered</p>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>CSS Selectors - Targeting Elements</h2>
+        <p>Selectors tell CSS which HTML elements to style. Think of them as <strong>addressing labels</strong>.</p>
+        
+        <table>
+            <tr>
+                <th>Selector Type</th>
+                <th>Syntax</th>
+                <th>Example</th>
+                <th>What it targets</th>
+            </tr>
+            <tr>
+                <td>Element</td>
+                <td>tagname</td>
+                <td>p { color: blue; }</td>
+                <td>All &lt;p&gt; elements</td>
+            </tr>
+            <tr>
+                <td>Class</td>
+                <td>.classname</td>
+                <td>.highlight { background: yellow; }</td>
+                <td>All elements with class="highlight"</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>#idname</td>
+                <td>#header { font-size: 24px; }</td>
+                <td>Element with id="header"</td>
+            </tr>
+        </table>
+        
+        <div class="explanation">
+            <h3>Real-world analogy:</h3>
+            <ul>
+                <li><strong>Element selector:</strong> "Paint all doors blue" (affects ALL doors)</li>
+                <li><strong>Class selector:</strong> "Paint all bedroom doors white" (affects doors with class="bedroom")</li>
+                <li><strong>ID selector:</strong> "Paint the main entrance door red" (affects only id="main-entrance")</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>The Box Model - Understanding Layout</h2>
+        <p>Every HTML element is like a box. Understanding this is crucial for layout!</p>
+        
+        <div class="code-example">
+.my-box {
+    width: 200px;           /* Content width */
+    height: 100px;          /* Content height */
+    padding: 20px;          /* Space inside the box */
+    border: 2px solid blue; /* Box border */
+    margin: 10px;           /* Space outside the box */
+}
+        </div>
+        
+        <div class="explanation">
+            <h3>Box Model Components:</h3>
+            <ul>
+                <li><strong>Content:</strong> The actual text or image</li>
+                <li><strong>Padding:</strong> Space between content and border (inside)</li>
+                <li><strong>Border:</strong> The visible edge of the box</li>
+                <li><strong>Margin:</strong> Space between this box and other elements (outside)</li>
+            </ul>
+        </div>
+        
+        <div class="demo-box">
+            <h3>This box demonstrates the box model:</h3>
+            <p>Content area with padding around it, blue border, and margin separating it from other elements.</p>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>Real Example: Professional Invoice Styling</h2>
+        <p>Let's style an invoice like you'd create for your clients:</p>
+        
+        <div class="code-example">
+&lt;div class="invoice"&gt;
+    &lt;h3&gt;INVOICE&lt;/h3&gt;
+    &lt;p&gt;Invoice #: INV-2025-001&lt;/p&gt;
+    &lt;div class="client-info"&gt;
+        &lt;strong&gt;ABC Company Ltd&lt;/strong&gt;&lt;br&gt;
+        123 Business Street&lt;br&gt;
+        Bangalore, Karnataka 560001
+    &lt;/div&gt;
+    &lt;p class="amount"&gt;Total: ₹28,000&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.invoice {
+    border: 2px solid #2563eb;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f8f9ff;
+}
+
+.invoice h3 {
+    color: #2563eb;
+    text-align: center;
+    margin-top: 0;
+}
+
+.client-info {
+    background: #e8f4f8;
+    padding: 10px;
+    border-left: 4px solid #0dcaf0;
+}
+
+.amount {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #16a34a;
+    text-align: right;
+}
+&lt;/style&gt;
+        </div>
+        
+        <div class="output-example">
+            <h3>This CSS creates a professional invoice:</h3>
+            <div class="demo-invoice">
+                <h3>INVOICE</h3>
+                <p>Invoice #: INV-2025-001</p>
+                <div class="client-info">
+                    <strong>ABC Company Ltd</strong><br>
+                    123 Business Street<br>
+                    Bangalore, Karnataka 560001
+                </div>
+                <p class="amount">Total: ₹28,000</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>Styling Forms - Making Them User-Friendly</h2>
+        <p>Forms are crucial for your compliance tracker. Let's make them look professional:</p>
+        
+        <div class="code-example">
+&lt;form class="client-form"&gt;
+    &lt;label for="clientName"&gt;Client Name:&lt;/label&gt;
+    &lt;input type="text" id="clientName" name="clientName"&gt;
+    
+    &lt;label for="businessType"&gt;Business Type:&lt;/label&gt;
+    &lt;select id="businessType" name="businessType"&gt;
+        &lt;option value="proprietorship"&gt;Proprietorship&lt;/option&gt;
+        &lt;option value="company"&gt;Company&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;button type="submit"&gt;Add Client&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;style&gt;
+.client-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.client-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.client-form input, .client-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.client-form button {
+    background: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.client-form button:hover {
+    background: #1d4ed8;
+}
+&lt;/style&gt;
+        </div>
+        
+        <div class="output-example">
+            <h3>Professional form styling:</h3>
+            <form class="demo-form">
+                <label for="clientName">Client Name:</label>
+                <input type="text" id="clientName" name="clientName" placeholder="Enter client name">
+                
+                <label for="businessType">Business Type:</label>
+                <select id="businessType" name="businessType">
+                    <option value="proprietorship">Proprietorship</option>
+                    <option value="partnership">Partnership</option>
+                    <option value="company">Company</option>
+                </select>
+                
+                <button type="submit">Add Client</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>Responsive Design - Mobile-First Approach</h2>
+        <p>Since your compliance tracker needs to work on mobile devices, let's learn responsive design:</p>
+        
+        <div class="code-example">
+/* Mobile-first approach */
+.container {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .container {
+        width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+}
+        </div>
+        
+        <div class="explanation">
+            <h3>Key Responsive Concepts:</h3>
+            <ul>
+                <li><strong>Mobile-first:</strong> Design for mobile, then add desktop styles</li>
+                <li><strong>Media queries:</strong> @media rules apply styles based on screen size</li>
+                <li><strong>Viewport meta tag:</strong> Essential for mobile responsiveness</li>
+                <li><strong>Flexible units:</strong> Use % instead of fixed pixels when possible</li>
+            </ul>
+        </div>
+        
+        <div class="output-example">
+            <h3>Try resizing your browser to see this in action:</h3>
+            <div class="responsive-demo">
+                This box changes color and shows different text based on screen size!
+            </div>
+        </div>
+        
+        <div class="try-it">
+            <h3>🔍 Test Responsive Design:</h3>
+            <p>Press <strong>F12</strong> to open browser dev tools, then click the mobile icon to test different screen sizes!</p>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>Colors and Typography - Making It Professional</h2>
+        
+        <h3>Color Systems</h3>
+        <div class="code-example">
+/* Named colors */
+color: red;
+color: blue;
+
+/* Hex colors (most common) */
+color: #2563eb;    /* Blue */
+color: #16a34a;    /* Green */
+color: #dc2626;    /* Red */
+
+/* RGB colors */
+color: rgb(37, 99, 235);      /* Blue */
+color: rgba(37, 99, 235, 0.5); /* Blue with 50% transparency */
+        </div>
+        
+        <h3>Typography Best Practices</h3>
+        <div class="code-example">
+body {
+    font-family: Arial, sans-serif;  /* Always have fallbacks */
+    font-size: 16px;                 /* Base font size */
+    line-height: 1.6;               /* Comfortable reading */
+    color: #333;                     /* Dark gray, not black */
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    color: #2563eb;                  /* Consistent heading color */
+}
+        </div>
+        
+        <div class="explanation">
+            <h3>Professional Color Palette for Compliance Tracker:</h3>
+            <ul>
+                <li><strong>Primary Blue:</strong> #2563eb (headers, buttons)</li>
+                <li><strong>Success Green:</strong> #16a34a (completed tasks)</li>
+                <li><strong>Warning Orange:</strong> #f59e0b (pending tasks)</li>
+                <li><strong>Error Red:</strong> #dc2626 (overdue tasks)</li>
+                <li><strong>Gray Text:</strong> #333 (body text)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>CSS Layout - Positioning Elements</h2>
+        
+        <h3>Display Properties</h3>
+        <div class="code-example">
+/* Block elements - take full width */
+div, p, h1 {
+    display: block;
+}
+
+/* Inline elements - sit next to each other */
+span, a, strong {
+    display: inline;
+}
+
+/* Inline-block - best of both worlds */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+}
+        </div>
+        
+        <h3>Flexbox - Modern Layout</h3>
+        <div class="code-example">
+.navigation {
+    display: flex;
+    justify-content: space-between;  /* Spread items apart */
+    align-items: center;             /* Center vertically */
+    padding: 10px;
+}
+
+.nav-item {
+    padding: 10px;
+    background: #f0f0f0;
+}
+        </div>
+        
+        <div class="explanation">
+            <h3>When to use each layout method:</h3>
+            <ul>
+                <li><strong>Block:</strong> Main content areas, sections</li>
+                <li><strong>Inline:</strong> Text formatting, links within paragraphs</li>
+                <li><strong>Inline-block:</strong> Buttons, navigation items</li>
+                <li><strong>Flexbox:</strong> Navigation bars, form layouts, card layouts</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>Common CSS Mistakes to Avoid</h2>
+        
+        <div class="warning">
+            <h3>⚠️ Common Pitfalls:</h3>
+            <ul>
+                <li><strong>Forgetting semicolons:</strong> color: red (missing ;)</li>
+                <li><strong>Wrong selector syntax:</strong> class-name instead of .class-name</li>
+                <li><strong>Mixing up margin and padding:</strong> They do different things!</li>
+                <li><strong>Not using box-sizing:</strong> Add box-sizing: border-box to avoid size issues</li>
+                <li><strong>Inline styles everywhere:</strong> Keep CSS organized in &lt;style&gt; or external files</li>
+            </ul>
+        </div>
+        
+        <div class="try-it">
+            <h3>🔧 Debug CSS:</h3>
+            <p>Use browser dev tools (F12) to inspect elements and see which CSS rules are applied. You can even edit CSS live!</p>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>🎯 Your CSS Challenge!</h2>
+        <p>Now it's time to practice! Create a styled page for your compliance tracker.</p>
+        
+        <div class="try-it">
+            <h3>Create a file called "my-compliance-dashboard.html" with:</h3>
+            <ol>
+                <li>A header with your company name (styled with CSS)</li>
+                <li>A navigation bar with links: Home, Clients, Tasks, Reports</li>
+                <li>A client card showing client name, business type, and status</li>
+                <li>A form to add new clients with proper styling</li>
+                <li>Use the professional color palette mentioned above</li>
+                <li>Make it responsive for both desktop and mobile</li>
+            </ol>
+            
+            <p><strong>Bonus:</strong> Add hover effects to buttons and links!</p>
+        </div>
+    </div>
+    
+    <div class="lesson-section">
+        <h2>📚 What's Next?</h2>
+        <p>Excellent work learning CSS! You now know how to make your HTML look professional and responsive.</p>
+        
+        <p>In the next lesson, we'll learn <strong>JavaScript</strong> - how to make your pages interactive. You'll learn to handle clicks, validate forms, and create dynamic content!</p>
+        
+        <div class="explanation">
+            <h3>Questions to think about:</h3>
+            <ul>
+                <li>Why is mobile-first design important for your compliance tracker?</li>
+                <li>How would you style a task card to show different states (pending, completed, overdue)?</li>
+                <li>What CSS would you use to create a sidebar navigation like your compliance tracker mockup?</li>
+            </ul>
+        </div>
+        
+        <div class="try-it">
+            <h3>🚀 Ready for the next step?</h3>
+            <p>Once you've completed the CSS challenge, we'll move on to JavaScript where you'll learn to make your compliance tracker truly interactive!</p>
+        </div>
+    </div>
+</body>
+</html>
