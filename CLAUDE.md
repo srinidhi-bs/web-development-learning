@@ -1,13 +1,28 @@
 # Web Development Learning Project - Claude Code Memory
 
+> ⚠️ **DORMANT since 2025-07-09** — superseded by learning-by-building across real projects.
+> Srinidhi now learns by shipping real tools (PyQt6 desktop apps, FastAPI backends, MCP servers)
+> instead of standalone lessons. Kept for reference; no further lessons planned.
+
+## Session Status
+- **Last session (2025-07-09):** Created the CSS basics lesson (`02-css-basics.html`) and set up
+  the GitHub repository. Last commit: 2025-07-09 "Update CLAUDE.md with git repository
+  information and session history".
+- **Next action:** None — project is dormant (see banner). If ever revived, the next step was
+  Lesson 3 (JavaScript basics). Note: `01-html-basics.html` has a small uncommitted practice
+  edit on disk (unclosed-tag experiment) — verify & commit next session if revived.
+- **Companion files:** `TODO_CURRENT.md` / `PROJECT_PHASES.md` were never created for this
+  project — the DORMANT banner above covers their role.
+
 ## Project Overview
 - **Project Name:** Web Development Learning Journey
 - **Purpose:** Comprehensive beginner-friendly learning path for HTML, CSS, and JavaScript
-- **Location:** `/home/srinidhibs/web-development-learning/`
+- **Location:** `C:\Development\web-development-learning\`
 - **Teaching Approach:** Interactive, spoon-feeding method with extensive explanations
 - **Target Audience:** Total beginner to software development (Srinidhi)
 
 ## Learner Profile (Srinidhi)
+- **Note (2026-07-02):** this 2025 profile is historical — Srinidhi now ships PyQt6/FastAPI/MCP projects.
 - **Age:** 33, Male, Bengaluru, Karnataka, India
 - **Experience Level:** Total beginner to software development
 - **Professional Background:** Accountant & stock trader, familiar with compliance systems (ComplyGlobal 2014-2018)
@@ -35,8 +50,8 @@
 ## Lesson Files Created
 - `01-html-basics.html` ✅ - HTML structure, tags, forms, real-world examples
 - `02-css-basics.html` ✅ - Styling, colors, layouts, responsive design
-- `03-javascript-basics.html` ⏳ - Variables, functions, DOM manipulation
-- `04-combined-project.html` ⏳ - Interactive project using all three
+- `03-javascript-basics.html` ❌ never built - Variables, functions, DOM manipulation (project went dormant first)
+- `04-combined-project.html` ❌ never built - Interactive project using all three (project went dormant first)
 
 ## Key Learning Principles
 - **No assumptions:** Explain every symbol, concept, and syntax
@@ -62,6 +77,9 @@
 - **Mobile friendly:** Responsive design for learning on different devices
 
 ## Connection to Main Project
+> **Historical (2025):** the Compliance Tracker + Vue.js migration plan below never happened —
+> the compliance-tracker project is itself parked (as of 2026-07-02).
+
 This learning project directly supports the **Compliance Tracker** project by:
 - Building foundational knowledge before Vue.js migration
 - Creating debugging skills for troubleshooting issues
@@ -96,7 +114,7 @@ By completion, learner should be able to:
 - **Maintain enthusiasm:** Keep lessons engaging and fun
 
 ## Development Commands
-- **Open lessons:** Navigate to `/home/srinidhibs/web-development-learning/`
+- **Open lessons:** Navigate to `C:\Development\web-development-learning\`
 - **View in browser:** Open `.html` files directly in browser
 - **Edit files:** Use any text editor or IDE
 - **View source:** Right-click → View Page Source in browser
@@ -121,6 +139,9 @@ By completion, learner should be able to:
 - **Git Setup:** Created GitHub repository for mobile access across devices
 
 ## Relationship to Compliance Tracker Project
+> **Historical (2025):** this dependency chain is defunct — the compliance-tracker project is
+> parked (as of 2026-07-02) and the Vue.js migration was never done.
+
 This learning project is a **prerequisite** for the main compliance tracker project:
 - **Current status:** Compliance tracker has Vue.js lessons but needs HTML/CSS/JS foundation
 - **Migration plan:** After completing basics, return to Vue.js migration of existing vanilla JS prototype
